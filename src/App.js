@@ -125,6 +125,19 @@ const App = () => {
     alert('This button is unavailable as LIFF is currently being opened in an external browser.');
   }
 
+  const share = async () => {
+    const result = await liff.shareTargetPicker([
+      {
+        "type": "text",
+        "text": "Hello World!"
+      },
+      {
+        "type": "text",
+        "text": "Messages from Share Target Picker"
+      }
+    ])
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -166,7 +179,7 @@ const App = () => {
       <section>
         <button onClick={handleOpenExternalWindowButton}>Open External Window</button>
         <button onClick={handleCloseLIFFAppButton}>Close LIFF App</button>
-        <button onClick={handleOpenQRCodeScannerButton}>Open QR Code Scanner</button>
+        <button onClick={share}>Share</button>
       </section>
       <section>
         <button onClick={handleSendMessageButton}>Send Message</button>
