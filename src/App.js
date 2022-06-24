@@ -13,6 +13,9 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState('')
   const [isLoggedInText, setIsLoggedInText] = React.useState('')
   const [profile, setProfile] = React.useState('')
+  const search = window.location.search;
+  const params = new URLSearchParams(search);
+  const refer = params.get('refer');
 
   React.useEffect(() => {
     initializeLiff()
@@ -25,6 +28,12 @@ const App = () => {
       })
       .then(() => {
         initializeApp()
+      })
+      .then(() => {
+        liff.openWindow({
+          url: 'https://speedkub.dev.web.app/register/refer=' + refer,
+          external: true
+        });
       })
       .catch((err) => {
         alert(err)
@@ -168,30 +177,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <header className="App-header">
-        {
-          isLoggedIn ? (
-            <React.Fragment>
-              <img src={profile.pictureUrl} className="Profile-picture" alt="profile-picture" />
-              <h4>{profile.statusMessage}</h4>
-            </React.Fragment>
-          ) : <img src={logo} className="App-logo" alt="logo" />
-        }
-      </header>
-      <section>
-        <div className="Card-info">
-          <h3>OS</h3>
-          <p>{os}</p>
-        </div>
-        <div className="Card-info">
-          <h3>Language</h3>
-          <p>{language}</p>
-        </div>
-        <div className="Card-info">
-          <h3>LIFF SDK Version</h3>
-          <p>{version}</p>
-        </div>
-      </section>
+      
       <section>
         <div className="Card-info">
           <h3>Is in Client</h3>
@@ -205,11 +191,7 @@ const App = () => {
         </div>
       </section>
       <section>
-       <h1> * ส่วนให้สมัคร *
-
-        * สมัครเสร็จให้แชร์ต่อได้ *
-       </h1>
-        <button onClick={share}>Share</button>
+        pls wait
       </section>
     </div>
   );
