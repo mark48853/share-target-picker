@@ -128,12 +128,32 @@ const App = () => {
   const share = async () => {
     const result = await liff.shareTargetPicker([
       {
-        "type": "text",
-        "text": "Hello World!"
-      },
-      {
-        "type": "text",
-        "text": "Messages from Share Target Picker"
+        "type": "flex",
+        "altText": "share",
+        "contents": {
+          "type": "bubble",
+          "size": "micro",
+          "direction": "ltr",
+          "footer": {
+            "type": "box",
+            "layout": "horizontal",
+            "backgroundColor": "#de4037",
+            "contents": [
+              {
+                "type": "button",
+                "action": {
+                  "type": "uri",
+                  "label": "share",
+                  "uri": "https://liff.line.me/1657084978-W5NaqyDN"
+                },
+                "color": "#1C0101FF",
+                "margin": "xs",
+                "height": "sm",
+                "style": "primary"
+              }
+            ]
+          }
+        }
       }
     ])
   }
@@ -177,20 +197,8 @@ const App = () => {
         </div>
       </section>
       <section>
-        <button onClick={handleOpenExternalWindowButton}>Open External Window</button>
-        <button onClick={handleCloseLIFFAppButton}>Close LIFF App</button>
         <button onClick={share}>Share</button>
       </section>
-      <section>
-        <button onClick={handleSendMessageButton}>Send Message</button>
-        <button onClick={handleGetAccessTokenButton}>Get Access Token</button>
-        {
-          isLoggedIn ? <button onClick={handleLogoutButton}>Log Out</button> : <button onClick={handleLogginButton}>Log In</button>
-        }
-      </section>
-      <footer>
-        Made with ❤️ by Farazaulia
-      </footer>
     </div>
   );
 }
