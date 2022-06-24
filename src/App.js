@@ -13,9 +13,9 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState('')
   const [isLoggedInText, setIsLoggedInText] = React.useState('')
   const [profile, setProfile] = React.useState('')
-  const search = window.location.search;
-  const params = new URLSearchParams(search);
-  const refer = params.get('refer');
+  
+
+
 
   React.useEffect(() => {
     initializeLiff()
@@ -28,8 +28,12 @@ const App = () => {
       })
       .then(() => {
         initializeApp()
+        const search = window.location.search;
+        const params = new URLSearchParams(search);
+        const refer = params.get('refer');
       })
       .then(() => {
+
         liff.openWindow({
           url: 'https://speedkub-dev.web.app/register?refer=' + refer,
           external: true
