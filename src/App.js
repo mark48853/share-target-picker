@@ -195,7 +195,7 @@ const App = () => {
         </div>
       </section>
       <section>
-        pls wait
+        please wait
       </section>
     </div>
   );
