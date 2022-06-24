@@ -132,23 +132,31 @@ const App = () => {
         "altText": "share",
         "contents": {
           "type": "bubble",
-          "size": "micro",
           "direction": "ltr",
+          "body": {
+            "type": "box",
+            "layout": "vertical",
+            "contents": [
+              {
+                "type": "text",
+                "text": "*ข้อความชวนให้สมัคร*",
+                "align": "center",
+                "contents": []
+              }
+            ]
+          },
           "footer": {
             "type": "box",
             "layout": "horizontal",
-            "backgroundColor": "#de4037",
             "contents": [
               {
                 "type": "button",
                 "action": {
                   "type": "uri",
-                  "label": "share",
+                  "label": "สมัคร",
                   "uri": "https://liff.line.me/1657084978-W5NaqyDN"
                 },
-                "color": "#1C0101FF",
-                "margin": "xs",
-                "height": "sm",
+                "color": "#322D2DFF",
                 "style": "primary"
               }
             ]
@@ -197,6 +205,10 @@ const App = () => {
         </div>
       </section>
       <section>
+       <h1> * ส่วนให้สมัคร *
+
+        * สมัครเสร็จให้แชร์ต่อได้ *
+       </h1>
         <button onClick={share}>Share</button>
       </section>
     </div>
