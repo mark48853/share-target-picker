@@ -22,13 +22,6 @@ const App = () => {
     initializeLiff()
   }, [])
 
-  React.useEffect(() => {
-      liff.openWindow({
-        url: 'https://speedkub-dev.web.app/register?refer=' + refer,
-        external: true
-      })
-  }, [refer])
-
   const initializeLiff = () => {
     liff
       .init({
@@ -42,7 +35,7 @@ const App = () => {
       })
       .then(() => {
         liff.openWindow({
-          url: 'https://speedkub.dev.web.app/register/refer=' + refer,
+          url: 'https://speedkub-dev.web.app/register/refer=' + refer,
           external: true
         });
       })
