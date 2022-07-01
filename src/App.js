@@ -13,6 +13,7 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState('')
   const [isLoggedInText, setIsLoggedInText] = React.useState('')
   const [profile, setProfile] = React.useState('')
+  const [pleasewait, setPleasewait] = React.useState('please wait . . .')
   const search = window.location.search;
   const params = new URLSearchParams(search);
   let refer = params.get('refer');
@@ -21,6 +22,12 @@ const App = () => {
   React.useEffect(() => {
     initializeLiff()
   }, [])
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      liff.closeWindow();
+    }, 3000);
+  }, [pleasewait])
 
   const initializeLiff = () => {
     liff
@@ -38,6 +45,9 @@ const App = () => {
           url: 'https://speedkub-dev.web.app/register?refer=' + refer,
           external: true
         });
+      })
+      .then(() => {
+        setPleasewait("")
       })
       .catch((err) => {
         alert(err)
@@ -179,7 +189,7 @@ const App = () => {
           </div>
         </section>
         <section>
-          please wait . . .
+          {pleasewait}
         </section>
       </main >
     </div>
