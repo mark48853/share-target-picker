@@ -13,7 +13,7 @@ const App = () => {
   const [isLoggedIn, setIsLoggedIn] = React.useState('')
   const [isLoggedInText, setIsLoggedInText] = React.useState('')
   const [profile, setProfile] = React.useState('')
-  
+  const [refer, setRefer] = React.useState('')
 
 
 
@@ -30,7 +30,7 @@ const App = () => {
         initializeApp()
         const search = window.location.search;
         const params = new URLSearchParams(search);
-        const refer = params.get('refer');
+        setRefer(params.get('refer'));
       })
       .then(() => {
 
