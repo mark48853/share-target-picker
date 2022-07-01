@@ -21,6 +21,13 @@ const App = () => {
     initializeLiff()
   }, [])
 
+  React.useEffect(() => {
+      liff.openWindow({
+        url: 'https://speedkub-dev.web.app/register?refer=' + refer,
+        external: true
+      })
+  }, [refer])
+
   const initializeLiff = () => {
     liff
       .init({
@@ -31,13 +38,6 @@ const App = () => {
         const search = window.location.search;
         const params = new URLSearchParams(search);
         setRefer(params.get('refer'));
-      })
-      .then(() => {
-
-        liff.openWindow({
-          url: 'https://speedkub-dev.web.app/register?refer=' + refer,
-          external: true
-        });
       })
       .catch((err) => {
         alert(err)
