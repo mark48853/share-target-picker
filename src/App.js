@@ -89,19 +89,7 @@ const App = () => {
     }
   }
 
-  const handleOpenQRCodeScannerButton = () => {
-    if (!liff.isInClient()) {
-      sendAlertIfNotInClient();
-    } else {
-      liff.scanCode().then(result => {
-        // e.g. result = { value: "Hello LIFF app!" }
-        const stringifiedResult = JSON.stringify(result);
-        alert(stringifiedResult);
-      }).catch(err => {
-        alert("scanCode failed!");
-      });
-    }
-  }
+
 
   const handleSendMessageButton = () => {
     if (!liff.isInClient()) {
