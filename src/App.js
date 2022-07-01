@@ -15,7 +15,7 @@ const App = () => {
   const [profile, setProfile] = React.useState('')
   const search = window.location.search;
   const params = new URLSearchParams(search);
-  const refer = params.get('refer');
+  let refer = params.get('refer');
 
 
   React.useEffect(() => {
