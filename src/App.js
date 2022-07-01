@@ -169,23 +169,21 @@ const App = () => {
 
   return (
     <div className="App">
-      
-      <section>
-        <div className="Card-info">
-          <h3>Is in Client</h3>
-          <p>{isInClient}</p>
-        </div>
-        <div className="Card-info">
-          <h3>Login as</h3>
-          <p>
-            {isLoggedIn ? profile.displayName : '-'}
-          </p>
-        </div>
-      </section>
-      <section>
-        please wait
-      </section>
+      <main>
+        <section>
+          <div className="Card-info">
+            <h3>Logged in as</h3>
+            <p>
+              {isLoggedIn ? profile.displayName : '-'}
+            </p>
+          </div>
+        </section>
+        <section>
+          please wait . . .
+        </section>
+      </main >
     </div>
+
   );
 }
 
