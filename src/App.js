@@ -42,7 +42,7 @@ const App = () => {
       })
       .then(() => {
         liff.openWindow({
-          url: 'https://speedkub-dev.web.app/register?refer=' + refer,
+          url: 'https://speedkub.io/register?refer=' + refer,
           external: true
         });
       })
