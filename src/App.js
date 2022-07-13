@@ -95,9 +95,9 @@ const App = () => {
         'type': 'text',
         'text': "แลกสิทธิ์รับ 100 POPCOIN ฟรี"
       }]).then(function () {
-        window.alert('Message sent');
+        window.alert('Complete!');
       }).catch(function (error) {
-        window.alert('Error sending message: ' + error);
+        window.alert('Error: ' + error);
       });
     }
   }
